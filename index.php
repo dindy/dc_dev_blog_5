@@ -1,10 +1,8 @@
 <?php
-// index.php
-$connection = new PDO("mysql:host=localhost;dbname=dc_dev_blog_2", 'root', '');
 
-$result = $connection->query('SELECT id, title FROM posts');
+require 'model.php';
 
-$connection = null;
+$posts = get_all_posts();
 
 // include the HTML presentation code
 require 'templates/list.php';
